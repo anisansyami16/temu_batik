@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1069475991671",
+    "project_id": "temubatik",
+    "storage_bucket": "temubatik.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069475991671:android:46cd5d6068ba7c91083672",
+        "android_client_info": {
+          "package_name": "com.example.temu_batik"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_OcRleWggq58hZFRsx-GA1dFbGAcbJjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
