@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import '../services/prediction_service.dart';
+import 'result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -46,7 +48,7 @@ class _UploadScreenState extends State<UploadScreen> {
     });
   }
 
-  void _goToPrediction() {
+  Future<void> _goToPrediction() async {
     if (_selectedImage == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -56,8 +58,26 @@ class _UploadScreenState extends State<UploadScreen> {
       return;
     }
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Gambar siap untuk diprediksi')),
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => const Center(child: CircularProgressIndicator()),
+    );
+
+    final predictionService = PredictionService();
+
+    final result = await predictionService.predictBatik(_selectedImage!);
+
+    if (!mounted) return;
+
+    Navigator.pop(context);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) =>
+            ResultScreen(imageFile: _selectedImage!, result: result),
+      ),
     );
   }
 
