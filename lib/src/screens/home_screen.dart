@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'upload_screen.dart';
 import 'history_screen.dart';
-import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
 
-  final screens = const [UploadScreen(), HistoryScreen(), ProfileScreen()];
+  final screens = const [UploadScreen(), HistoryScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +36,6 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.history_outlined),
             selectedIcon: Icon(Icons.history),
             label: 'Riwayat',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person),
-            label: 'Profil',
           ),
         ],
       ),
