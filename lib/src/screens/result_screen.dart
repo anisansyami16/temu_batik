@@ -33,7 +33,10 @@ class _ResultScreenState extends State<ResultScreen> {
     });
 
     try {
-      await _historyService.savePrediction(widget.result);
+      await _historyService.savePrediction(
+        result: widget.result,
+        imageFile: widget.imageFile,
+      );
 
       if (!mounted) return;
 

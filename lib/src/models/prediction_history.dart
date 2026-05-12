@@ -6,6 +6,7 @@ class PredictionHistory {
   final double confidence;
   final String origin;
   final String description;
+  final String? imagePath;
   final DateTime createdAt;
 
   PredictionHistory({
@@ -14,6 +15,7 @@ class PredictionHistory {
     required this.confidence,
     required this.origin,
     required this.description,
+    required this.imagePath,
     required this.createdAt,
   });
 
@@ -28,6 +30,7 @@ class PredictionHistory {
       confidence: (data['confidence'] ?? 0).toDouble(),
       origin: data['origin'] ?? '',
       description: data['description'] ?? '',
+      imagePath: data['imagePath'],
       createdAt: (data['createdAt'] as Timestamp).toDate(),
     );
   }
